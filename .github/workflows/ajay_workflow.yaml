@@ -22,7 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-        uses: actions/checkout@v3 #digiajay/LabVIEW_CI_Build@v1.0.0
+      - name: Working Dir
+        run: echo "$PWD" 
+      - name: Test Upload Artifact
+        uses: actions/upload-artifact@v3.1.2 #digiajay/LabVIEW_CI_Build@v1.0.0
         with:
           # Artifact name
           name: artifact v1.0.0 # optional, default is artifact
